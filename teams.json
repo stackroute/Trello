@@ -18,5 +18,10 @@
       "backgroundColor": "backgroundColorOfTheBoard"
     }
   ],
-  "permissionLevelBoard": "public/teamVisible/private"
+  "permissionLevelBoard": "public/teamVisible/private",
+  "pref": {
+    "backgroundColor": "color",
+    "backgroundImage": "image",
+    "coverImage": "image"
+  }
 }

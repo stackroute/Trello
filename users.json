@@ -17,7 +17,7 @@
   ],
   "teams": [
     {
-      "_comment":"a user may belong to a team and the team has its own set of boards",
+      "_comment": "a user may belong to a team and the team has its own set of boards",
       "id": "teamId",
       "name": "name Of the Team",
       "url": "url of the Team",
@@ -54,29 +54,6 @@
       }
     }
   ],
-  "cards": [
-    {
-      "id": "someId",
-      "title": "titleOfTheCards",
-      "url": "urlOfTheCard",
-      "board": {
-        "id": "idOfTheBoard",
-        "name": "nameOfTheBoard",
-        "url": "urlOfTheBoard"
-      },
-      "list": {
-        "id": "someId",
-        "name": "nameOfTheList"
-      },
-      "badges": {
-        "desc": "true/false",
-        "numberListItems": "someNumber",
-        "numberOfItemsChecked": "someNumber",
-        "numberOfComments": "number",
-        "isAttachmentAvailable": "true/false"
-      }
-    }
-  ],
   "initial": "any2Chars",
   "avatar": "avatarOfTheUser",
   "bio": "dataOfTheUser",
@@ -85,6 +62,14 @@
       "id": "someId",
       "emailId": "emailId",
       "addedOn": "someDateTime"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "sessionId",
+      "deviceName": "nameOfDevice",
+      "deviceId": "deviceId",
+      "deviceType": "typeOfDevice",
     }
   ],
   "createdOn": "dateTime",
