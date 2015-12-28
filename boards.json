@@ -3,7 +3,9 @@
   "name": "nameOfTheBoard",
   "prefs": {
     "backgroundColor": "someColor",
-    "permissionLevel":"public/members/TeamMembers"
+    "permissionLevel":"Public/Members/TeamMembers",
+    "backgroundImage": "backgroundImage",
+    "comments": "Public/Members/TeamMembers"
   },
   "url": "urlOfTheBoard",
   "idOrganization": "idOfTheOrganization",
@@ -31,10 +33,16 @@
       "itemUrl": "url of the card/attachment/checklist",
       "nameOfTheItem": "name of the item",
       "idOfTheItem": "some Ids",
-      "fromId":"fromId",
-      "from": "fromWhat",
-      "toId": "toId",
-      "to": "toWhat",
+      "from": {
+        "id": "someId",
+        "name": "name",
+        "type": "type"
+      },
+      "to": {
+        "id": "someId",
+        "name": "name",
+        "type": "type"
+      },
       "dateTime": "dateTimeAdded"
     }
   ]
