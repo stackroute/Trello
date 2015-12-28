@@ -1,14 +1,18 @@
 {
   "id": "idOfTheBoard",
   "name": "nameOfTheBoard",
+  "url": "urlOfTheBoard",
+  "organization": {
+    "id": "idOfTheOrganization",
+    "name": "nameOfTheOrganization",
+    "url": "urlOfTheOrganization"
+  },
   "prefs": {
     "backgroundColor": "someColor",
     "permissionLevel":"Public/Members/TeamMembers",
     "backgroundImage": "backgroundImage",
     "comments": "Public/Members/TeamMembers"
   },
-  "url": "urlOfTheBoard",
-  "idOrganization": "idOfTheOrganization",
   "lists":[
     {
       "id": "listId",
@@ -24,7 +28,6 @@
       "avatar": "avatarOfTheMember"
     }
   ],
-  "lastActivity":"dateTimeLastActivity",
   "activity": [
     {
       "id": "SomeId",
@@ -45,5 +48,6 @@
       },
       "dateTime": "dateTimeAdded"
     }
-  ]
+  ],
+  "lastActivity":"dateTimeLastActivity"
 }
