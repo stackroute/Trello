@@ -44,7 +44,7 @@ var createTeam = function(req,res,next) {
     "boards": [],
     "permissionLevel": "public",
     "pref": {
-      "backgroundColor":
+      "backgroundColor": ""
     }
   });
   next();

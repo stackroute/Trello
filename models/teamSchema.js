@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var TeamSchema = new mongoose.Schema({
-    "id": mongoose.Schema.Types.ObjectId
+    "id": mongoose.Schema.Types.ObjectId,
     "teamName": String,
     "members": [
       {
