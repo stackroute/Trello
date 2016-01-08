@@ -5,7 +5,7 @@ html
     link(rel="stylesheet",href="../stylesheets/bootstrap.min.css")
     link(rel="stylesheet",href="../stylesheets/style.css")
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700',rel='stylesheet',type='text/css')
-    script(src='javascripts/jquery-1.11.3.min.js')
+    script(src='../javascripts/jquery-1.11.3.min.js')
   body
     div.surface
       div.tc-page-header
@@ -26,11 +26,11 @@ html
               |My Boards
           div.tc-page-board-section-list
             each boardSection in boards
-              div.tc-page-board-section-list-item
+              div.tc-page-board-section-list-item.js-page-board-section-list-item
                 a(href=boardSection.url,style="backgroundColor: #{boardSection.prefs.backgroundColor}")
                   !{boardSection.name}
             div.tc-page-board-section-list-item
-              a(href='#',style="background-color: rgb(210,215,211)",class="js-tc-add-board" data-toggle="modal" data-target=".pop-over-modal")
+              a(href='#',style="background-color: rgb(210,215,211)",data-toggle="modal" data-target=".pop-over-modal")
                 |Create new board...
     div.modal.fade.pop-over-modal
       div.modal-dialog.modal-sm
@@ -51,7 +51,7 @@ html
                 label(for="js-tc-board-team")
                   |Team
                 input(type="text",class="form-control",id="js-tc-board-team",placeholder="")
-              button(type="submit",class="btn btn-default")
+              button(type="button",data-dismiss="modal",class="btn btn-primary js-tc-add-board")
                 |Submit
-  script(src='javascripts/script.js')
-  script(src='javascripts/bootstrap.min.js')
+  script(src='../javascripts/script.js')
+  script(src='../javascripts/bootstrap.min.js')

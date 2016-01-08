@@ -7,7 +7,11 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var mongoose = require('mongoose');
-var db = require('./models/db');
+
+/* Database Connection to Project_Trello (Singleton)*/
+var mongoose = require('mongoose');
+var dbURI = 'mongodb://localhost/Project_Trello';
+mongoose.connect(dbURI);
 
 var app = express();
 // view engine setup
@@ -22,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* Routes */
 app.use('/', routes);
 app.use('/users', users);
 

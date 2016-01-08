@@ -6,28 +6,25 @@ var Board = require('.././models/boardSchema');
 var Team = require('.././models/teamSchema');
 
 var createBoard = function(req,res,next) {
+  var title = req.body.title;
+  var url = "/b/"+title;
   Board.create({
-  "name": "Proj Trello",
-  "url": "urlOfTheBoard",
+  "name": req.body.title,
+  "url": url,
   "team":{
-    "id": teamId
   },
   "prefs": {
     "backgroundColor": "rgb(44,62,80)",
     "permissionLevel":"Public",
     "comments": "Public"
   },
-  "lists": [
-    {
-      "name": "BackLog"
-    }
-  ],
-  "members": [{"id" : "568a6ed5a3b58908299a387d"}],
+  "lists": [],
+  "members": [],
   "lastActivity": new Date()
   },function(err,board) {
     console.log("Something");
   if(!err) {
-    res.json(board)
+    res.json(board);
   }
   else {
     console.log(err);
@@ -50,15 +47,25 @@ var createTeam = function(req,res,next) {
   next();
 }
 
+var showAllBoards = function(req,res,next) {
+  Board.find(function(err,data) {
+    res.render('users/home',{ boards: data });
+  });
+}
+
+router.get('/boards',function(req,res) {
+  showAllBoards(req,res);
+});
+
 router.get('/:id', function(req, res, next) {
   var id = req.params.id;
-  Boards.find({"members":{ $elemMatch: {"id": id}}},function(err,results) {
+  Board.find({"members":{ $elemMatch: {"id": id}}},function(err,results) {
     res.render('home',{ boards: results });
   });
 });
 
 router.post('/createBoard',function(req,res) {
-  createBoard(null,req,res);
+  createBoard(req,res);
 });
 
 router.post('/:teamId/createBoard',function(req,res) {
